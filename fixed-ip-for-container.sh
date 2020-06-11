@@ -8,10 +8,6 @@ networks:
     external:
       name: frontend
 
-    ipam:
-      config:
-        - subnet: 172.19.0.0/24
-
 services:
   mysql-development:
     image: mysql:5.7.26
@@ -23,3 +19,4 @@ services:
     networks:
       frontend:
         ipv4_address: 172.19.0.3
+
