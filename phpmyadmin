@@ -1,0 +1,20 @@
+
+version: '3.5'
+
+networks:
+  frontend:
+    external:
+      name: frontend
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "9001:80"
+    volumes:
+      - /sessions
+    networks:
+      frontend:
+        ipv4_address: 172.19.0.5
